@@ -1,12 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Start from "./Start";
+import {BrowserRouter,Switch, Route, Link} from "react-router-dom";
+import SignUp from "./SignUp";
+import Login from "./Login";
+import CardProject from "./CardProject";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <BrowserRouter>
+          <Switch>
+              <Route path="/signup">
+                  <SignUp />
+              </Route>
+              <Route path="/login">
+                  <Login />
+              </Route>
+              <Route path="/cardproject">
+                  <CardProject />
+              </Route>
+              <Route path="/">
+                  <Start />
+              </Route>
+          </Switch>
+      </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
